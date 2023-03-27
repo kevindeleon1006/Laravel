@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CropsandSeed;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProfileController;
@@ -40,4 +41,8 @@ Route::controller(Dash::class)->group(function () {
     Route::get('profile/maindash', 'maindash')->name('maindash');
     Route::get('profile/{id}', 'edit')->name('user.edit_profile');
     Route::post('profile/{id}', 'update')->name('user.update_profile');
+});
+
+Route::controller(CropsandSeed::class)->group(function () {
+    Route::get('crops', 'index')->name('crops');
 });
